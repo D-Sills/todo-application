@@ -1,9 +1,3 @@
-# SETU MAD1 Assignment One
-
-* Student Number: 20080901
-* Name: Darren Sills
-* GitHub username: D-Sills
-
 # To-Do List Application
 
 ![Alt text](docs/todoapp.png "To-Do List Application")
