@@ -29,7 +29,7 @@ To get started with the To-Do List Application, follow these steps:
 1. **Clone the Repository**: Clone the application repository to your local machine using the following command:
 
    ```bash
-   git clone https://github.com/johnrellissetu/setu-mad1-assignment-one-D-Sills
+   git clone https://github.com/D-Sills/todo-application
    ```
 
 2. **Open the Project**: Open the project in your favoured Kotlin IDE.
