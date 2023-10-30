@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.setu.todo.controllers.MainController">
+   <children>
+      <BorderPane prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="667.0" prefWidth="369.0" style="-fx-background-color: #FAFAFA;">
+               <padding>
+                  <Insets left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <children>
+                  <VBox layoutX="31.0" layoutY="33.0" prefHeight="598.0" prefWidth="300.0" style="-fx-background-color: #FAFAFA;">
+                     <children>
+                        <Button fx:id="addNewListButton" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddNewListButton" prefHeight="36.0" prefWidth="127.0" style="-fx-background-color: none;" text=" Add list" textFill="#9d9d9d">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="34.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/new%20list.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="-1.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <TitledPane fx:id="todoTitledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="300.0" text="Todo Lists">
+                           <content>
+                              <ListView fx:id="todoListsView" prefHeight="568.0" prefWidth="300.0" styleClass="myListView" />
+                           </content>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </TitledPane>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </left>
+         <top>
+            <HBox prefHeight="53.0" prefWidth="1280.0" style="-fx-background-color: #E04F5F;" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane prefHeight="53.0" prefWidth="147.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.66668701171875" minWidth="10.0" prefWidth="47.33332824707031" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.66665649414062" minWidth="10.0" prefWidth="49.66667175292969" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.66666666666666" minWidth="10.0" prefWidth="50.666666666666686" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="clearAllButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClearAllButton" prefHeight="25.0" prefWidth="36.0" style="-fx-background-color: none; -fx-font-weight: BOLD;" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="32.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/clear.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="-1.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="243.0">
+                           <children>
+                              <Label fx:id="taskTitle" prefHeight="50.0" prefWidth="191.0" style="-fx-font-style: strikethrough;" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="addNewTaskButton" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddNewTaskButton" prefHeight="20.0" prefWidth="127.0" style="-fx-background-color: none;" text=" Add task" textFill="#9d9d9d">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="34.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/plus.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="-1.0" />
+                                 </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <GridPane prefHeight="100.0" prefWidth="574.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="774.3333028157554" minWidth="10.0" prefWidth="574.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="326.0" minWidth="10.0" prefWidth="54.888916015625" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.0" minWidth="10.0" prefWidth="475.111083984375" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.0" minWidth="10.0" prefWidth="48.11112467447913" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button fx:id="searchButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onSearchButton" prefHeight="23.0" prefWidth="50.0" text="Search">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <ImageView fitHeight="27.0" fitWidth="26.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/Search.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <TextField fx:id="searchTextField" prefHeight="25.0" prefWidth="472.0" GridPane.columnIndex="1" />
+                                    <Button fx:id="resetButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResetButton" prefHeight="25.0" prefWidth="36.0" style="-fx-background-color: none; -fx-font-weight: BOLD;" textAlignment="CENTER" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="39.0" fitWidth="32.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/reset.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </graphic>
+                                       <padding>
+                                          <Insets left="-1.0" />
+                                       </padding>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <children>
+                                    <HBox layoutY="12.0">
+                                       <children>
+                                          <Label text="Type:" />
+                                          <ComboBox fx:id="typeFilter" prefHeight="25.0" prefWidth="92.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="145.0" layoutY="12.0" prefHeight="25.0" prefWidth="132.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="48.0" text="Status:" />
+                                          <ComboBox fx:id="statusFilter" prefHeight="25.0" prefWidth="103.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="413.0" layoutY="12.0" prefHeight="25.0" prefWidth="153.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="17.0" prefWidth="71.0" text="Sort by:" HBox.hgrow="ALWAYS" />
+                                          <ComboBox fx:id="sortOptions" prefHeight="25.0" prefWidth="137.0">
+                                     
+                                          </ComboBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="296.0" layoutY="12.0">
+                                       <children>
+                                          <Label text="Priority:" />
+                                          <Spinner fx:id="priorityFilter" prefHeight="25.0" prefWidth="57.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </top>
+               <padding>
+                  <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
+               </padding>
+               <center>
+                  <ListView fx:id="tasksListView" prefHeight="507.0" prefWidth="805.0" styleClass="myListView" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+      <Pane fx:id="backgroundOverlay" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,0.5);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
