@@ -14,7 +14,6 @@ This README will hopefully provide a detailed guide on how to use the applicatio
 2. [Using the Application](#using-the-application)
 3. [Developing the Application](#developing-the-application)
 4. [Contributing](#contributing)
-5. [License](#license)
 
 ## Getting Started
 
